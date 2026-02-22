@@ -56,5 +56,9 @@ const viewer=document.getElementById("viewer");const contentHolder=document.getE
 document.querySelectorAll(".gallery img, .gallery video").forEach(item=>{item.onclick=()=>{viewer.classList.add("show");contentHolder.innerHTML="";if(item.tagName==="VIDEO"){const v=document.createElement("video");v.src=item.src;v.controls=true;v.autoplay=true;contentHolder.appendChild(v);}else{const i=document.createElement("img");i.src=item.src;contentHolder.appendChild(i);}}});
 function closeViewer(){viewer.classList.remove("show");contentHolder.innerHTML="";}
 </script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
