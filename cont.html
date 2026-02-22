@@ -1,0 +1,197 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GT1NF3MTEH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GT1NF3MTEH');</script>
+<meta charset="UTF-8"><title>Contact | Next On Internet</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--black:#030305;--void:#08080f;--g:rgba(255,255,255,.04);--gb:rgba(255,255,255,.07);--v:#7c3aed;--vl:#a855f7;--cy:#06b6d4;--pk:#ec4899;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:white;overflow-x:hidden;cursor:none;opacity:0;animation:fi 1s .1s forwards;}
+@keyframes fi{to{opacity:1}}
+body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(124,58,237,.1),transparent);pointer-events:none;z-index:0;}
+.dot{position:fixed;width:8px;height:8px;background:var(--vl);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);}
+.ring{position:fixed;width:38px;height:38px;border:1px solid rgba(168,85,247,.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .25s,height .25s;}
+nav{position:fixed;top:0;width:100%;z-index:9000;padding:0 1.5rem;background:rgba(3,3,5,.8);backdrop-filter:blur(24px);border-bottom:1px solid var(--gb);}
+.ni{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:66px;}
+.brand{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:white;text-decoration:none;text-shadow:0 0 20px rgba(168,85,247,.7),0 0 50px rgba(168,85,247,.3);}
+.nl{display:flex;gap:1.6rem;align-items:center;overflow-x:auto;scrollbar-width:none;}
+.nl::-webkit-scrollbar{display:none;}
+.nl a{font-size:.76rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;white-space:nowrap;flex-shrink:0;}
+.nl a:hover{color:white;}.nl a.active{color:var(--vl);}
+.nc{background:var(--v)!important;color:white!important;padding:.4rem 1rem;border-radius:8px;}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s;}
+.rv.show{opacity:1;transform:none;}
+[data-d="1"]{transition-delay:.1s;}[data-d="2"]{transition-delay:.2s;}[data-d="3"]{transition-delay:.3s;}
+.sl-t{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vl);font-family:'Syne',sans-serif;margin-bottom:.6rem;display:block;}
+.st{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;}
+.grad{background:linear-gradient(135deg,var(--vl),var(--cy));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+
+/* FORM */
+.form-wrap{background:var(--g);border:1px solid var(--gb);border-radius:24px;padding:2.5rem;}
+.field{width:100%;background:rgba(0,0,0,.4);border:1px solid var(--gb);border-radius:12px;padding:1rem 1.2rem;color:white;font-family:'DM Sans',sans-serif;font-size:.92rem;outline:none;transition:border-color .2s,box-shadow .2s;margin-bottom:1rem;}
+.field:focus{border-color:var(--v);box-shadow:0 0 0 3px rgba(124,58,237,.12);}
+.field::placeholder{color:rgba(255,255,255,.25);}
+textarea.field{resize:vertical;min-height:130px;}
+.sub-btn{width:100%;background:linear-gradient(135deg,var(--v),#6d28d9);color:white;border:none;padding:1rem;border-radius:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;cursor:none;transition:all .2s;position:relative;overflow:hidden;}
+.sub-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#6d28d9,var(--v));opacity:0;transition:opacity .2s;}
+.sub-btn:hover::before{opacity:1;}
+.sub-btn span{position:relative;z-index:1;}
+.sub-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(124,58,237,.4);}
+
+/* INFO CARDS */
+.info-card{background:var(--g);border:1px solid var(--gb);border-radius:18px;padding:1.5rem;display:flex;align-items:center;gap:1rem;transition:border-color .3s,transform .3s;}
+.info-card:hover{border-color:rgba(124,58,237,.3);transform:translateX(4px);}
+.info-icon{width:48px;height:48px;background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.25);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.info-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--vl);font-family:'Syne',sans-serif;margin-bottom:.25rem;}
+.info-val{font-size:.9rem;color:rgba(255,255,255,.65);}
+
+/* CHATBOT */
+#chat-btn{position:fixed;bottom:2rem;right:2rem;width:58px;height:58px;background:var(--v);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:none;z-index:8000;box-shadow:0 4px 24px rgba(124,58,237,.5);transition:transform .2s,box-shadow .2s;border:none;}
+#chat-btn:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(124,58,237,.6);}
+#chat-box{position:fixed;bottom:6rem;right:2rem;width:320px;background:#0e0e18;border:1px solid rgba(124,58,237,.25);border-radius:20px;display:none;flex-direction:column;overflow:hidden;z-index:8000;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.chat-head{background:linear-gradient(135deg,var(--v),#4f46e5);padding:1rem 1.25rem;display:flex;align-items:center;gap:.75rem;}
+.chat-avatar{width:34px;height:34px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.chat-head-info h4{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;}
+.chat-head-info p{font-size:.72rem;color:rgba(255,255,255,.65);}
+#chat-log{padding:1rem;height:240px;overflow-y:auto;display:flex;flex-direction:column;gap:.75rem;font-size:.85rem;}
+#chat-log::-webkit-scrollbar{width:3px;}
+#chat-log::-webkit-scrollbar-thumb{background:var(--v);border-radius:3px;}
+.msg-bot,.msg-you{padding:.6rem .9rem;border-radius:12px;max-width:85%;line-height:1.5;}
+.msg-bot{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.2);align-self:flex-start;color:rgba(255,255,255,.85);}
+.msg-you{background:var(--v);align-self:flex-end;color:white;}
+.chat-input-row{display:flex;border-top:1px solid rgba(255,255,255,.06);}
+#chat-inp{flex:1;background:transparent;border:none;padding:.85rem 1rem;color:white;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;}
+#chat-inp::placeholder{color:rgba(255,255,255,.25);}
+#chat-send{background:var(--v);border:none;padding:.85rem 1rem;color:white;cursor:none;font-size:1rem;transition:background .2s;}
+#chat-send:hover{background:#6d28d9;}
+
+/* FOOTER */
+footer{background:var(--void);border-top:1px solid var(--gb);padding:2.5rem 1.5rem;}
+.fi2{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center;}
+.fa{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.fa a{color:rgba(255,255,255,.38);text-decoration:none;font-size:.82rem;transition:color .2s;}
+.fa a:hover{color:white;}
+.fc{color:rgba(255,255,255,.2);font-size:.75rem;width:100%;text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--gb);}
+</style>
+</head>
+<body>
+<div class="dot" id="dot"></div><div class="ring" id="ring"></div>
+<nav>
+  <div class="ni">
+    <a href="index.html" class="brand">Next On Internet</a>
+    <div class="nl">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a>
+      <a href="results.html">Results</a><a href="blog.html">Blog</a><a href="cont.html" class="active nc">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding:10rem 1.5rem 3rem;text-align:center;">
+  <div style="max-width:600px;margin:0 auto;">
+    <span class="sl-t rv">Get In Touch</span>
+    <h1 class="st rv" data-d="1">Let's Build<br><span class="grad">Something Great</span></h1>
+    <p style="color:rgba(255,255,255,.45);margin-top:1.25rem;font-size:1rem;line-height:1.75;font-weight:300;" class="rv" data-d="2">Tell us your goals and we'll build your growth system. Free strategy session available.</p>
+  </div>
+</section>
+
+<section style="padding:2rem 1.5rem 6rem;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;align-items:start;" class="rv">
+    <div class="form-wrap">
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;">Send a Message</h3>
+      <form action="https://formsubmit.co/nextoninternet@gmail.com" method="POST">
+        <input name="name" placeholder="Your Full Name" required class="field">
+        <input name="email" type="email" placeholder="Email Address" required class="field">
+        <input name="goal" placeholder="What's your main growth goal?" class="field">
+        <textarea name="message" placeholder="Tell us about your brand and what you're looking to achieve..." required class="field"></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thanks.html">
+        <button type="submit" class="sub-btn"><span>Send Message ↗</span></button>
+      </form>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <a href="mailto:nextoninternet@gmail.com" class="info-card" style="text-decoration:none;color:white;">
+        <div class="info-icon">✉️</div>
+        <div><div class="info-label">Email</div><div class="info-val">nextoninternet@gmail.com</div></div>
+      </a>
+      <a href="https://instagram.com/nextoninternet" target="_blank" class="info-card" style="text-decoration:none;color:white;">
+        <div class="info-icon">📸</div>
+        <div><div class="info-label">Instagram</div><div class="info-val">@nextoninternet</div></div>
+      </a>
+      <div class="info-card">
+        <div class="info-icon">📅</div>
+        <div><div class="info-label">Consultation</div><div class="info-val">Free strategy session available</div></div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">⚡</div>
+        <div><div class="info-label">Response Time</div><div class="info-val">Within 24 hours</div></div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(6,182,212,.06));border:1px solid rgba(124,58,237,.2);border-radius:18px;padding:1.5rem;margin-top:.5rem;">
+        <p style="font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.7;">💬 Use the chat bubble in the bottom right for a quick answer — or fill the form for a full strategy session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHATBOT -->
+<button id="chat-btn" onclick="toggleChat()">💬</button>
+<div id="chat-box">
+  <div class="chat-head">
+    <div class="chat-avatar">🤖</div>
+    <div class="chat-head-info"><h4>NOI Assistant</h4><p>Usually replies instantly</p></div>
+  </div>
+  <div id="chat-log">
+    <div class="msg-bot">👋 Hi! I'm the Next On Internet assistant. Ask me anything about our services, pricing, or results!</div>
+  </div>
+  <div class="chat-input-row">
+    <input id="chat-inp" placeholder="Type your message..." onkeydown="if(event.key==='Enter')sendMsg()">
+    <button id="chat-send" onclick="sendMsg()">↑</button>
+  </div>
+</div>
+
+<footer>
+  <div class="fi2">
+    <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;text-shadow:0 0 20px rgba(168,85,247,.5);">Next On Internet</span>
+    <div class="fa"><a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="results.html">Results</a><a href="blog.html">Blog</a><a href="cont.html">Contact</a></div>
+    <p class="fc">© 2026 Next On Internet. Built to dominate the algorithm.</p>
+  </div>
+</footer>
+
+<script>
+const dot=document.getElementById('dot'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Fix grid on mobile
+if(window.innerWidth<700){document.querySelector('[style*="grid-template-columns:1.4fr"]').style.gridTemplateColumns='1fr';}
+
+function toggleChat(){
+  const b=document.getElementById('chat-box');
+  b.style.display=b.style.display==='flex'?'none':'flex';
+}
+function sendMsg(){
+  const inp=document.getElementById('chat-inp'),log=document.getElementById('chat-log');
+  const msg=inp.value.trim();if(!msg)return;
+  log.innerHTML+=`<div class="msg-you">${msg}</div>`;
+  inp.value='';log.scrollTop=log.scrollHeight;
+  setTimeout(()=>{
+    const m=msg.toLowerCase();
+    let r='Thanks for reaching out! Fill the form above and our team will get back to you within 24 hours.';
+    if(m.includes('service')||m.includes('help'))r='We offer AI Content Strategy, Short Form Domination, Growth Funnels, Brand Authority Building, AI Video Production and Analytics Optimization! Which one interests you?';
+    else if(m.includes('price')||m.includes('cost')||m.includes('how much'))r='Every project is custom-priced based on your goals and scope. Use the form above to request a free strategy session and we\'ll give you a tailored quote!';
+    else if(m.includes('result')||m.includes('reach')||m.includes('proof'))r='We\'ve hit over 2.1M organic reach, 210K video views and 870K impressions for clients! Check out our Results page for full case studies.';
+    else if(m.includes('time')||m.includes('how long'))r='Most clients start seeing results within the first 30 days. The full system typically takes 60-90 days to reach its potential.';
+    else if(m.includes('instagram')||m.includes('social'))r='We specialize in Instagram and short-form video platforms! Our @nextoninternet account is a live example of our own system in action.';
+    log.innerHTML+=`<div class="msg-bot">${r}</div>`;
+    log.scrollTop=log.scrollHeight;
+  },600);
+}
+</script>
+</body>
+</html>

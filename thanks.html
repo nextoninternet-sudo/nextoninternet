@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GT1NF3MTEH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GT1NF3MTEH');
+</script>
+<meta charset="UTF-8">
+<title>Message Received | Next On Internet</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{margin:0;color:white;font-family:sans-serif;background:linear-gradient(rgba(0,0,0,.88),rgba(0,0,0,.95)),url("background.jpg.png");background-size:cover;background-attachment:fixed;display:flex;align-items:center;justify-content:center;min-height:100vh;}
+.neon-brand{font-weight:bold;color:#fff;text-shadow:0 0 7px #fff,0 0 10px #fff,0 0 21px #fff,0 0 42px #a855f7,0 0 82px #a855f7;white-space:nowrap;}
+.glass{background:rgba(255,255,255,.05);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.08);box-shadow:0 0 40px rgba(168,85,247,.15);}
+.gradient-text{background:linear-gradient(45deg,#a855f7,#6366f1,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:hue 6s infinite linear;}
+@keyframes hue{from{filter:hue-rotate(0deg);}to{filter:hue-rotate(360deg);}}
+.cursor{position:fixed;width:140px;height:140px;border-radius:999px;pointer-events:none;background:radial-gradient(circle,rgba(168,85,247,.35),transparent 70%);transform:translate(-50%,-50%);z-index:9999;}
+</style>
+</head>
+<body>
+<div class="glass p-12 rounded-3xl text-center max-w-lg mx-6 reveal">
+<h1 class="neon-brand text-3xl mb-6">Next On Internet</h1>
+<div class="text-6xl mb-6">🚀</div>
+<h2 class="text-4xl font-bold mb-4 gradient-text">Message Received!</h2>
+<p class="text-gray-300 mb-10">Thanks for reaching out. Our team is already reviewing your goals, and we'll get back to you within 24 hours to build your growth system.</p>
+<a href="index.html" class="inline-block bg-purple-600 hover:bg-purple-700 px-10 py-4 rounded-xl font-semibold transition transform hover:scale-105">Back to Home</a>
+</div>
+<div class="cursor" id="cursor"></div>
+<script>
+const c=document.getElementById("cursor");document.addEventListener("mousemove",e=>{c.style.left=e.clientX+"px";c.style.top=e.clientY+"px";});
+</script>
+</body>
+</html>

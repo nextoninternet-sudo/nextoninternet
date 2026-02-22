@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GT1NF3MTEH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GT1NF3MTEH');
+</script>
+<meta charset="UTF-8">
+<title>Gallery | Next On Internet</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{margin:0;font-family:sans-serif;color:white;background:linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.96)),url("background.jpg.png");background-size:cover;background-attachment:fixed;}
+.neon-brand{font-weight:bold;color:#fff;text-shadow:0 0 7px #fff,0 0 10px #fff,0 0 21px #fff,0 0 42px #a855f7,0 0 82px #a855f7;white-space:nowrap;}
+.nav-scroll{display:flex;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.nav-scroll::-webkit-scrollbar{display:none;}
+nav a{transition:.3s;flex-shrink:0;}
+nav a:hover{color:#a855f7}
+.gallery .item-container{overflow:hidden;border-radius:16px;position:relative;aspect-ratio:1/1;}
+.gallery img, .gallery video{border-radius:16px;cursor:pointer;transition:.4s;width:100%;height:100%;object-fit:cover;}
+.gallery .item-container:hover img, .gallery .item-container:hover video{transform:scale(1.05);box-shadow:0 0 40px rgba(168,85,247,.4);}
+#viewer{position:fixed;inset:0;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.4s;z-index:999;}
+#viewer.show{opacity:1;pointer-events:auto;}
+#viewer img, #viewer video{max-width:90%;max-height:90%;border-radius:20px;animation:zoom .4s ease;}
+@keyframes zoom{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.close{position:absolute;top:30px;right:40px;font-size:40px;cursor:pointer;color:white;z-index:1001;}
+</style>
+</head>
+<body>
+<nav class="fixed top-0 w-full bg-black/40 backdrop-blur border-b border-gray-900 z-50">
+<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+<h1 class="neon-brand text-xl">Next On Internet</h1>
+<div class="nav-scroll flex gap-6 md:gap-8 text-sm w-full md:w-auto justify-center md:justify-end">
+<a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html" class="text-purple-400">Gallery</a><a href="results.html">Results</a><a href="blog.html">Blog</a><a href="cont.html">Contact</a>
+</div>
+</div>
+</nav>
+<section class="text-center pt-48 pb-20"><h2 class="text-5xl font-bold mb-6">Our Work Gallery</h2><p class="text-gray-400">Human-centric content designed to scale.</p></section>
+<section class="pb-32"><div class="gallery max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-6">
+<div class="item-container relative"><video src="Show your face.mp4" poster="viral_secrets_cover.png.png" muted></video></div>
+<div class="item-container relative"><span style="position:absolute;top:10px;left:10px;z-index:10;background:#a855f7;color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.05em;">✨ LATEST</span><img src="img8.jpg.png" alt="Generative AI Creation"></div>
+<div class="item-container"><img src="img1.jpg.png"></div>
+<div class="item-container"><img src="img2.jpg.png"></div>
+<div class="item-container"><img src="img3.jpg.jpg"></div>
+<div class="item-container"><img src="img4.jpg.jpeg"></div>
+<div class="item-container"><img src="img5.jpg.jpeg"></div>
+<div class="item-container"><img src="img6.jpg.png"></div>
+<div class="item-container"><img src="img7.jpg.png"></div>
+</div></section>
+<div id="viewer"><span class="close" onclick="closeViewer()">×</span><div id="contentHolder" class="flex items-center justify-center w-full h-full"></div></div>
+<script>
+const viewer=document.getElementById("viewer");const contentHolder=document.getElementById("contentHolder");
+document.querySelectorAll(".gallery img, .gallery video").forEach(item=>{item.onclick=()=>{viewer.classList.add("show");contentHolder.innerHTML="";if(item.tagName==="VIDEO"){const v=document.createElement("video");v.src=item.src;v.controls=true;v.autoplay=true;contentHolder.appendChild(v);}else{const i=document.createElement("img");i.src=item.src;contentHolder.appendChild(i);}}});
+function closeViewer(){viewer.classList.remove("show");contentHolder.innerHTML="";}
+</script>
+</body>
+</html>

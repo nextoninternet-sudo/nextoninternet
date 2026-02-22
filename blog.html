@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GT1NF3MTEH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GT1NF3MTEH');
+</script>
+<meta charset="UTF-8">
+<title>Blog | Next On Internet</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
+
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Syne',sans-serif;color:white;background:linear-gradient(rgba(0,0,0,.90),rgba(0,0,0,.97)),url("background.jpg.png");background-size:cover;background-attachment:fixed;opacity:0;animation:fade 1s forwards;}
+@keyframes fade{to{opacity:1}}
+
+.neon-brand{font-weight:bold;color:#fff;text-shadow:0 0 7px #fff,0 0 10px #fff,0 0 21px #fff,0 0 42px #a855f7,0 0 82px #a855f7;white-space:nowrap;}
+.nav-scroll{display:flex;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.nav-scroll::-webkit-scrollbar{display:none;}
+nav a{transition:.3s;flex-shrink:0;}
+nav a:hover{color:#a855f7}
+
+.glass{background:rgba(255,255,255,.04);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.08);box-shadow:0 0 40px rgba(168,85,247,.08);}
+
+.blog-card{background:rgba(255,255,255,.04);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;transition:.4s;cursor:pointer;}
+.blog-card:hover{transform:translateY(-8px);box-shadow:0 0 50px rgba(168,85,247,.3);border-color:rgba(168,85,247,.5);}
+.blog-card img{width:100%;height:220px;object-fit:cover;transition:.4s;}
+.blog-card:hover img{transform:scale(1.04);}
+
+.tag{background:rgba(168,85,247,.2);border:1px solid rgba(168,85,247,.4);color:#c084fc;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
+
+.gradient-text{background:linear-gradient(90deg,#a855f7,#6366f1,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+
+.featured-card{background:rgba(168,85,247,.08);backdrop-filter:blur(18px);border:1px solid rgba(168,85,247,.25);border-radius:24px;overflow:hidden;transition:.4s;cursor:pointer;}
+.featured-card:hover{box-shadow:0 0 60px rgba(168,85,247,.35);}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.4s;padding:20px;}
+.modal-overlay.show{opacity:1;pointer-events:auto;}
+.modal-box{background:#0a0a0a;border:1px solid rgba(168,85,247,.3);border-radius:24px;max-width:760px;width:100%;max-height:88vh;overflow-y:auto;animation:slideUp .4s ease;}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-box::-webkit-scrollbar{width:4px;}
+.modal-box::-webkit-scrollbar-thumb{background:#a855f7;border-radius:4px;}
+
+.cursor{position:fixed;width:140px;height:140px;border-radius:999px;pointer-events:none;background:radial-gradient(circle,rgba(168,85,247,.35),transparent 70%);transform:translate(-50%,-50%);z-index:9999;}
+
+.reveal{opacity:0;transform:translateY(40px);transition:.8s;}
+.reveal.show{opacity:1;transform:none;}
+
+.search-box{background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 20px;color:white;outline:none;width:100%;transition:.3s;font-family:'Syne',sans-serif;}
+.search-box:focus{border-color:#a855f7;box-shadow:0 0 20px rgba(168,85,247,.3);}
+.search-box::placeholder{color:rgba(255,255,255,.3);}
+
+.filter-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:8px 20px;font-size:13px;cursor:pointer;transition:.3s;color:rgba(255,255,255,.7);font-family:'Syne',sans-serif;}
+.filter-btn:hover,.filter-btn.active{background:rgba(168,85,247,.25);border-color:#a855f7;color:#c084fc;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-black/40 backdrop-blur border-b border-gray-900 z-50">
+<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+  <h1 class="neon-brand text-xl">Next On Internet</h1>
+  <div class="nav-scroll flex gap-6 md:gap-8 text-sm w-full md:w-auto justify-center md:justify-end">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="results.html">Results</a>
+    <a href="blog.html" class="text-purple-400">Blog</a>
+    <a href="cont.html">Contact</a>
+  </div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-48 pb-16 text-center px-6 reveal">
+  <span class="tag mb-6 inline-block">Knowledge Hub</span>
+  <h2 class="text-6xl font-bold mt-4 mb-6 gradient-text">The AI Growth Blog</h2>
+  <p class="text-gray-400 max-w-xl mx-auto text-lg">Strategies, secrets, and systems to help you dominate the 2026 algorithm.</p>
+</section>
+
+<!-- SEARCH + FILTERS -->
+<section class="pb-12 px-6 reveal">
+  <div class="max-w-4xl mx-auto">
+    <input class="search-box mb-6" placeholder="🔍  Search articles..." id="searchInput" oninput="filterPosts()">
+    <div class="flex flex-wrap gap-3 justify-center" id="filterBtns">
+      <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+      <button class="filter-btn" onclick="setFilter('AI Strategy',this)">AI Strategy</button>
+      <button class="filter-btn" onclick="setFilter('Content',this)">Content</button>
+      <button class="filter-btn" onclick="setFilter('Growth',this)">Growth</button>
+      <button class="filter-btn" onclick="setFilter('SEO',this)">SEO</button>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED POST -->
+<section class="pb-16 px-6 reveal">
+  <div class="max-w-7xl mx-auto">
+    <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-6">⚡ Featured</p>
+    <div class="featured-card grid md:grid-cols-2 gap-0" onclick="openModal('agentic')">
+      <div style="overflow:hidden;border-radius:24px 0 0 24px;">
+        <img src="img3.jpg.jpg" alt="Agentic AI" style="width:100%;height:100%;min-height:300px;object-fit:cover;transition:.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div class="p-10 flex flex-col justify-center">
+        <div class="flex gap-3 mb-4">
+          <span class="tag">AI Strategy</span>
+          <span class="text-gray-500 text-sm self-center">Feb 2026</span>
+        </div>
+        <h3 class="text-3xl font-bold mb-4 leading-tight">Agentic AI Is Here — And Most Creators Are Missing It</h3>
+        <p class="text-gray-400 mb-6">In 2026, if you're still just prompting a chatbot, you're already behind. We've entered the era of Agentic AI — here's what you need to know to stay ahead of your niche.</p>
+        <span class="text-purple-400 font-semibold hover:text-purple-300 transition">Read Full Article →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="pb-32 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8" id="blogGrid">
+
+      <div class="blog-card reveal" data-category="Content" onclick="openModal('viral')">
+        <img src="viral_secrets_cover.png.png" alt="Viral Secrets">
+        <div class="p-6">
+          <div class="flex gap-3 mb-3"><span class="tag">Content</span><span class="text-gray-500 text-xs self-center">Jan 2026</span></div>
+          <h4 class="text-xl font-bold mb-2">3 Ways to Stand Out Online in 2026</h4>
+          <p class="text-gray-400 text-sm">Use video. Show your face. Share your opinion. The 3 pillars that beat the algorithm every time.</p>
+          <p class="text-purple-400 text-sm mt-4 font-semibold">Read More →</p>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-category="SEO" onclick="openModal('geo')">
+        <img src="img4.jpg.jpeg" alt="GEO vs SEO">
+        <div class="p-6">
+          <div class="flex gap-3 mb-3"><span class="tag">SEO</span><span class="text-gray-500 text-xs self-center">Jan 2026</span></div>
+          <h4 class="text-xl font-bold mb-2">SEO Is Dead. GEO Is Alive — Here's the Difference</h4>
+          <p class="text-gray-400 text-sm">Generative Engine Optimization is reshaping how content gets discovered. Are you optimizing for it?</p>
+          <p class="text-purple-400 text-sm mt-4 font-semibold">Read More →</p>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-category="Growth" onclick="openModal('goldmine')">
+        <img src="img5.jpg.jpeg" alt="Local Goldmine">
+        <div class="p-6">
+          <div class="flex gap-3 mb-3"><span class="tag">Growth</span><span class="text-gray-500 text-xs self-center">Feb 2026</span></div>
+          <h4 class="text-xl font-bold mb-2">The Local Goldmine: Using Geo-Strategies to Dominate Your Market</h4>
+          <p class="text-gray-400 text-sm">Most creators ignore hyper-local targeting. Here's why it's your biggest untapped growth lever right now.</p>
+          <p class="text-purple-400 text-sm mt-4 font-semibold">Read More →</p>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-category="AI Strategy" onclick="openModal('deeplearning')">
+        <img src="img7.jpg.png" alt="Deep Learning">
+        <div class="p-6">
+          <div class="flex gap-3 mb-3"><span class="tag">AI Strategy</span><span class="text-gray-500 text-xs self-center">Dec 2025</span></div>
+          <h4 class="text-xl font-bold mb-2">Deep Learning & Neural Networks: What Every Creator Needs to Know</h4>
+          <p class="text-gray-400 text-sm">You don't need a PhD. You need to understand the basics of how the algorithm thinks — and use it against it.</p>
+          <p class="text-purple-400 text-sm mt-4 font-semibold">Read More →</p>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-category="AI Strategy" onclick="openModal('genai')">
+        <img src="img8.jpg.png" alt="Generative AI">
+        <div class="p-6">
+          <div class="flex gap-3 mb-3"><span class="tag">AI Strategy</span><span class="text-gray-500 text-xs self-center">Feb 2026</span></div>
+          <h4 class="text-xl font-bold mb-2">Generative AI: Creation & Innovation for Content Creators</h4>
+          <p class="text-gray-400 text-sm">From AI art to AI music — how generative models are creating an entirely new creative economy you can tap into.</p>
+          <p class="text-purple-400 text-sm mt-4 font-semibold">Read More →</p>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-category="Content" onclick="openModal('internet')">
+        <img src="img2.jpg.png" alt="Internet is Changing">
+        <div class="p-6">
+          <div class="flex gap-3 mb-3"><span class="tag">Content</span><span class="text-gray-500 text-xs self-center">Dec 2025</span></div>
+          <h4 class="text-xl font-bold mb-2">What's Coming Next On The Internet?</h4>
+          <p class="text-gray-400 text-sm">From Analog Algorithms to Generative Intelligence — a timeline of the internet's evolution and where it's heading.</p>
+          <p class="text-purple-400 text-sm mt-4 font-semibold">Read More →</p>
+        </div>
+      </div>
+
+    </div>
+    <p class="text-center text-gray-600 mt-8 text-sm" id="noResults" style="display:none;">No articles found. Try a different search.</p>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="py-24 text-center bg-purple-600 reveal">
+  <h2 class="text-4xl font-bold mb-4">Want Weekly Insights Like These?</h2>
+  <p class="text-purple-200 mb-8 max-w-md mx-auto">Join creators already using our AI Growth Checklist to hit 2.1M+ reach.</p>
+  <a href="index.html#checklist" class="bg-black px-10 py-4 rounded-xl font-semibold hover:bg-gray-900 transition inline-block">Get the Free Checklist</a>
+</section>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal-box p-10" id="modalContent"></div>
+</div>
+
+<div class="cursor" id="cursor"></div>
+
+<script>
+const c=document.getElementById("cursor");
+document.addEventListener("mousemove",e=>{c.style.left=e.clientX+"px";c.style.top=e.clientY+"px";});
+
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")})});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+
+let activeFilter='all';
+
+function setFilter(cat,btn){
+  activeFilter=cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filterPosts();
+}
+
+function filterPosts(){
+  const query=document.getElementById('searchInput').value.toLowerCase();
+  const cards=document.querySelectorAll('#blogGrid .blog-card');
+  let visible=0;
+  cards.forEach(card=>{
+    const cat=card.dataset.category||'';
+    const text=card.innerText.toLowerCase();
+    const matchCat=activeFilter==='all'||cat===activeFilter;
+    const matchSearch=!query||text.includes(query);
+    card.style.display=(matchCat&&matchSearch)?'block':'none';
+    if(matchCat&&matchSearch)visible++;
+  });
+  document.getElementById('noResults').style.display=visible===0?'block':'none';
+}
+
+const posts={
+  agentic:{
+    tag:'AI Strategy',date:'February 2026',
+    title:'Agentic AI Is Here — And Most Creators Are Missing It',
+    img:'img3.jpg.jpg',
+    body:`<p class="text-gray-300 leading-relaxed mb-4">In 2026, the game has changed. If you're still just opening ChatGPT, typing a prompt, and copy-pasting the result — you are already behind the curve. We've officially entered the era of <strong class="text-purple-400">Agentic AI</strong>.</p>
+    <p class="text-gray-300 leading-relaxed mb-4">Agentic AI doesn't just respond — it <em>acts</em>. It plans, executes multi-step workflows, and loops back to refine its own output. Think of it as hiring a digital employee who never sleeps, never complains, and compounds your output 10x.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">What This Means for Creators</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">The creators who win in 2026 are those who build <strong class="text-purple-400">Human-in-the-Loop systems</strong> — where they provide the vision, personality, and opinion, and AI handles the execution, repurposing, and scaling.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">The 3-Step Agentic Framework</h4>
+    <p class="text-gray-300 leading-relaxed mb-2">1. <strong class="text-purple-400">Film once</strong> — A single raw talking-head video with your real opinion.</p>
+    <p class="text-gray-300 leading-relaxed mb-2">2. <strong class="text-purple-400">Automate the repurpose</strong> — AI slices it into 5–10 Reels, generates captions, and creates thumbnails.</p>
+    <p class="text-gray-300 leading-relaxed mb-4">3. <strong class="text-purple-400">Scale with authenticity</strong> — Your face and voice remain front and centre. The algorithm rewards the human signal.</p>
+    <p class="text-gray-400 leading-relaxed">This is exactly the system we use for our clients to reach 2.1M+ monthly. The technology is available to everyone — but most creators don't know how to wire it together.</p>`
+  },
+  viral:{
+    tag:'Content',date:'January 2026',
+    title:'3 Ways to Stand Out Online in 2026',
+    img:'viral_secrets_cover.png.png',
+    body:`<p class="text-gray-300 leading-relaxed mb-4">The internet is flooded with faceless, generic, AI-generated content. So how do you cut through? The answer is simpler than you think — and it's what we've been preaching since day one.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">1. Use Video 🎥</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">Every major platform is pushing video. The algorithm rewards it. Viewers trust it. If you're not filming — even on a phone — you're leaving massive reach on the table. Start before you feel ready.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">2. Show Your Face 😊</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">Faceless content is fading. People follow <em>people</em>. Your face is your brand. In an era of AI content, human authenticity is the scarcest and most valuable resource on the internet. Use it.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">3. Share Your Opinion 💬</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">Vanilla content gets ignored. Take a stance. Share a hot take. Disagree with the mainstream. Opinion-driven content generates comments, shares, and loyal followers — because people feel something when they watch it.</p>
+    <p class="text-gray-400 leading-relaxed">These three things cost zero dollars. They just require courage. The creators who do all three consistently are the ones hitting 7-figure reach numbers.</p>`
+  },
+  geo:{
+    tag:'SEO',date:'January 2026',
+    title:'SEO Is Dead. GEO Is Alive — Here\'s the Difference',
+    img:'img4.jpg.jpeg',
+    body:`<p class="text-gray-300 leading-relaxed mb-4">For years, SEO was king. Stuff your content with keywords, build backlinks, rank on Google. But with AI search engines rewriting how people discover information, the rules have fundamentally changed.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">Enter GEO: Generative Engine Optimization</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">GEO is the practice of optimizing your content so that AI models like ChatGPT, Perplexity, and Google's AI Overviews cite <em>you</em> as the source. Instead of ranking on page 1, you want to <strong class="text-purple-400">be the answer</strong>.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">How to Optimize for GEO</h4>
+    <p class="text-gray-300 leading-relaxed mb-2">• Write long-form, authoritative captions (300+ words).</p>
+    <p class="text-gray-300 leading-relaxed mb-2">• Use specific, factual statements — not vague claims.</p>
+    <p class="text-gray-300 leading-relaxed mb-2">• Structure content with clear headings and definitions.</p>
+    <p class="text-gray-300 leading-relaxed mb-4">• Build topical authority by posting consistently in your niche.</p>
+    <p class="text-gray-400 leading-relaxed">The shift from SEO to GEO is still early — which means creators who adapt now will own their niche before the competition even notices.</p>`
+  },
+  goldmine:{
+    tag:'Growth',date:'February 2026',
+    title:'The Local Goldmine: Using Geo-Strategies to Dominate Your Market',
+    img:'img5.jpg.jpeg',
+    body:`<p class="text-gray-300 leading-relaxed mb-4">Every creator is competing globally. Yet most buyers are local. This paradox is the biggest untapped opportunity in the creator economy right now.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">Why Local Works</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">When you target a specific city, region, or community, your content feels hyper-relevant. Engagement rates skyrocket. Trust is built faster. And local clients convert at a dramatically higher rate than cold global traffic.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">The Geo-Strategy Playbook</h4>
+    <p class="text-gray-300 leading-relaxed mb-2">1. <strong class="text-purple-400">Geotag your posts</strong> — always tag your location on Instagram and TikTok.</p>
+    <p class="text-gray-300 leading-relaxed mb-2">2. <strong class="text-purple-400">Mention local landmarks</strong> in captions to trigger local distribution.</p>
+    <p class="text-gray-300 leading-relaxed mb-2">3. <strong class="text-purple-400">Collaborate with local creators</strong> to cross-pollinate audiences.</p>
+    <p class="text-gray-300 leading-relaxed mb-4">4. <strong class="text-purple-400">Run geo-targeted ads</strong> with as little as ₹200/day to dominate local feeds.</p>
+    <p class="text-gray-400 leading-relaxed">Going local to go global sounds counterintuitive. But the brands that win in 2026 will be the ones that master micro-communities before scaling outward.</p>`
+  },
+  deeplearning:{
+    tag:'AI Strategy',date:'December 2025',
+    title:'Deep Learning & Neural Networks: What Every Creator Needs to Know',
+    img:'img7.jpg.png',
+    body:`<p class="text-gray-300 leading-relaxed mb-4">You don't need to understand backpropagation. You don't need to write Python. But as a content creator in 2026, understanding the basics of how AI <em>thinks</em> will give you a massive competitive edge.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">What Are Neural Networks?</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">A neural network is a system of algorithms modeled loosely on the human brain. It learns by processing massive amounts of data and identifying patterns. The social media algorithm is a neural network — it learns what you like, and shows you more of it.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">How This Affects Your Content</h4>
+    <p class="text-gray-300 leading-relaxed mb-2">• <strong class="text-purple-400">Consistency trains the algorithm</strong> — post regularly and the system learns your content type.</p>
+    <p class="text-gray-300 leading-relaxed mb-2">• <strong class="text-purple-400">Engagement signals matter most</strong> — saves, shares, and comments tell the network your content is valuable.</p>
+    <p class="text-gray-300 leading-relaxed mb-4">• <strong class="text-purple-400">Patterns beat virality</strong> — one viral post moves the needle less than 30 consistent posts.</p>
+    <p class="text-gray-400 leading-relaxed">When you understand how these systems learn, you stop trying to hack the algorithm and start feeding it exactly what it needs to work in your favour.</p>`
+  },
+  genai:{
+    tag:'AI Strategy',date:'February 2026',
+    title:'Generative AI: Creation & Innovation for Content Creators',
+    img:'img8.jpg.png',
+    body:`<p class="text-gray-300 leading-relaxed mb-4">We're no longer in the era of AI as a tool for the tech elite. Generative AI is now accessible to anyone with a smartphone — and it's creating an entirely new creative economy.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">What Generative AI Can Do for You</h4>
+    <p class="text-gray-300 leading-relaxed mb-2">• <strong class="text-purple-400">Thumbnails in seconds</strong> — Use Midjourney or Leonardo to create scroll-stopping visuals.</p>
+    <p class="text-gray-300 leading-relaxed mb-2">• <strong class="text-purple-400">B-roll without a camera</strong> — Tools like Sora and Veo generate hyper-realistic video footage.</p>
+    <p class="text-gray-300 leading-relaxed mb-2">• <strong class="text-purple-400">Voiceovers and music</strong> — ElevenLabs and Suno handle audio production in minutes.</p>
+    <p class="text-gray-300 leading-relaxed mb-4">• <strong class="text-purple-400">Caption writing at scale</strong> — AI drafts keyword-rich, 300-word captions from a single bullet point.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">The Critical Warning</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">Pure AI content is dying. The platforms know. The audience knows. Generic AI slop gets buried. The winning formula is <strong class="text-purple-400">Human-in-the-Loop</strong> — your authentic face, voice, and opinion, amplified by AI production.</p>
+    <p class="text-gray-400 leading-relaxed">Generative AI is your production team. But you are still the star. Never forget that.</p>`
+  },
+  internet:{
+    tag:'Content',date:'December 2025',
+    title:'What\'s Coming Next On The Internet?',
+    img:'img2.jpg.png',
+    body:`<p class="text-gray-300 leading-relaxed mb-4">The internet has gone through three distinct eras of intelligence — and we're entering the most disruptive one yet.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">Era 1: Analog Algorithms (1950s–1980s)</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">Rule-based systems. If-then logic. The internet didn't exist yet, but the foundations of computation were being laid. Simple, deterministic, predictable.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">Era 2: Statistical Learning (1990s–2010s)</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">Machine learning emerges. Systems begin to find patterns in data. Google's PageRank, Netflix recommendations, Facebook's feed — all powered by statistical models learning from behaviour.</p>
+    <h4 class="text-white font-bold text-lg mt-6 mb-3">Era 3: Generative Intelligence (2020s–Future)</h4>
+    <p class="text-gray-300 leading-relaxed mb-4">Now AI doesn't just find patterns — it creates. It writes, draws, codes, and reasons. The internet is no longer a place you browse. It's a place that responds to you, generates for you, and increasingly, <em>thinks alongside you</em>.</p>
+    <p class="text-gray-400 leading-relaxed">The creators who understand this shift — and build their brands inside it — will own the next decade of the internet. That's what Next On Internet is here to help you do.</p>`
+  }
+};
+
+function openModal(key){
+  const p=posts[key];if(!p)return;
+  document.getElementById('modalContent').innerHTML=`
+    <img src="${p.img}" style="width:100%;height:260px;object-fit:cover;border-radius:16px;margin-bottom:28px;">
+    <div class="flex gap-3 mb-4"><span class="tag">${p.tag}</span><span style="color:#6b7280;font-size:13px;align-self:center;">${p.date}</span></div>
+    <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:20px;line-height:1.2;">${p.title}</h2>
+    ${p.body}
+    <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(168,85,247,.2);text-align:center;">
+      <p style="color:#9ca3af;font-size:14px;margin-bottom:16px;">Want us to build this system for you?</p>
+      <a href="cont.html" style="background:linear-gradient(45deg,#9333ea,#a855f7);padding:12px 32px;border-radius:12px;font-weight:700;display:inline-block;color:white;text-decoration:none;">Book a Free Strategy Call</a>
+    </div>`;
+  document.getElementById('modal').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(e){
+  if(e.target.id==='modal'){
+    document.getElementById('modal').classList.remove('show');
+    document.body.style.overflow='';
+  }
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('modal').classList.remove('show');document.body.style.overflow='';}});
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Services | Next On Internet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+background:
+linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.96)),
+url("background.jpg.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+font-family:sans-serif;
+}
+
+/* NEON BRANDING */
+.neon-brand {
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #a855f7, 0 0 82px #a855f7;
+    white-space: nowrap;
+}
+
+/* MOBILE NAV SCROLL */
+.nav-scroll {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+}
+.nav-scroll::-webkit-scrollbar { display: none; }
+
+nav a{transition:.3s; flex-shrink: 0;}
+nav a:hover{color:#a855f7}
+
+.glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+.glass:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(168,85,247,.3);
+border-color:#a855f7;
+}
+
+.cursor{
+position:fixed;
+width:140px;
+height:140px;
+border-radius:999px;
+pointer-events:none;
+background:radial-gradient(circle,rgba(168,85,247,.35),transparent 70%);
+transform:translate(-50%,-50%);
+z-index:9999;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="fixed w-full top-0 z-50 bg-black/40 backdrop-blur border-b border-gray-900">
+<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+<h1 class="neon-brand text-xl">Next On Internet</h1>
+<div class="nav-scroll flex gap-6 md:gap-8 text-sm w-full md:w-auto justify-center md:justify-end">
+<a href="index.html">Home</a>
+<a href="services.html" class="text-purple-400">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="results.html">Results</a>
+<a href="blog.html">Blog</a>
+<a href="cont.html">Contact</a>
+</div>
+</div>
+</nav>
+
+
+<section class="pt-48 pb-28 text-center px-6">
+<h2 class="text-5xl font-bold mb-6">Our Premium AI Services</h2>
+<p class="text-gray-300 max-w-xl mx-auto">
+We build complete growth ecosystems combining AI efficiency with human-centric storytelling.
+</p>
+</section>
+
+
+<section class="pb-28">
+<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+
+<div class="glass p-8 rounded-2xl">
+<h3 class="text-xl font-semibold mb-4 text-purple-400">AI Content Strategy</h3>
+<p class="text-gray-400">Moving beyond "AI Slop." We identify trends before they go viral and script them for high-intent Social SEO.</p>
+</div>
+
+<div class="glass p-8 rounded-2xl">
+<h3 class="text-xl font-semibold mb-4 text-purple-400">Short Form Domination</h3>
+<p class="text-gray-400">Leveraging Agentic Workflows to turn a single video into a month of content.</p>
+</div>
+
+<div class="glass p-8 rounded-2xl">
+<h3 class="text-xl font-semibold mb-4 text-purple-400">Growth Funnels</h3>
+<p class="text-gray-400">Automated lead generation systems that turn 2.1M+ reach into loyal clients.</p>
+</div>
+
+<div class="glass p-8 rounded-2xl">
+<h3 class="text-xl font-semibold mb-4 text-purple-400">Brand Authority Building</h3>
+<p class="text-gray-400">The "Human-in-the-Loop" method: positioning your face and opinion as the market leader.</p>
+</div>
+
+<div class="glass p-8 rounded-2xl">
+<h3 class="text-xl font-semibold mb-4 text-purple-400">AI Video Production</h3>
+<p class="text-gray-400">Using cutting-edge models like Sora and Veo for hyper-realistic b-roll and visuals.</p>
+</div>
+
+<div class="glass p-8 rounded-2xl">
+<h3 class="text-xl font-semibold mb-4 text-purple-400">Analytics Optimization</h3>
+<p class="text-gray-400">Daily data audits to refine ROI and scale what works in real-time.</p>
+</div>
+
+</div>
+</section>
+
+
+<section class="pb-28 text-center">
+<h2 class="text-4xl font-bold mb-16">The Dominance System</h2>
+<div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 px-6">
+<div>
+<div class="text-purple-400 text-3xl font-bold">01</div>
+<p class="text-gray-300">AI Trend Audit</p>
+</div>
+<div>
+<div class="text-purple-400 text-3xl font-bold">02</div>
+<p class="text-gray-300">Human-Loop Strategy</p>
+</div>
+<div>
+<div class="text-purple-400 text-3xl font-bold">03</div>
+<p class="text-gray-300">Agentic Execution</p>
+</div>
+<div>
+<div class="text-purple-400 text-3xl font-bold">04</div>
+<p class="text-gray-300">Viral Scaling</p>
+</div>
+</div>
+</section>
+
+
+<section class="py-28 text-center bg-purple-600">
+<h2 class="text-5xl font-bold mb-6">Ready To Grow?</h2>
+<a href="cont.html" class="bg-black px-10 py-4 rounded-xl font-semibold hover:bg-gray-900 transition">
+Book Strategy Call
+</a>
+</section>
+
+
+<div class="cursor" id="cursor"></div>
+
+<script>
+const c=document.getElementById("cursor");
+document.addEventListener("mousemove",e=>{
+c.style.left=e.clientX+"px";
+c.style.top=e.clientY+"px";
+});
+</script>
+
+</body>
+</html>
