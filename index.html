@@ -112,5 +112,9 @@ document.addEventListener("mousemove",e=>{c.style.left=e.clientX+"px";c.style.to
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")})});
 document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 </script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
